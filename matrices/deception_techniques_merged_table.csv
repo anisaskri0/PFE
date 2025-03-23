@@ -1,0 +1,200 @@
+Technique ID,Technique Name,Tactic,Deception Techniques
+T1003,Credential Dumping,Credential Access,"Inject fake credentials into LSASS (honey hashes)., Create Kerberoast Service Account honeytokens., Fake credentials in browser password managers."
+T1003.003,OS Credential Dumping: NTDS,credential-access,DecoyUserCredential
+T1003.005,OS Credential Dumping: Cached Domain Credentials,credential-access,DecoyUserCredential
+T1003.007,OS Credential Dumping: Proc Filesystem,credential-access,DecoyFile
+T1003.008,OS Credential Dumping: /etc/passwd and /etc/shadow,credential-access,DecoyFile
+T1003.008,OS Credential Dumping: /etc/passwd and /etc/shadow,credential-access,DecoyUserCredential
+T1005,Data from Local System,Collection,"Create fake directories and files (i.e. honeyfiles) and monitor access using go-audit, auditd, or FIM tools., Create decoy files or documents (beacons) that phone home when opened., Create files containing deceptive content and breadcrumbs to lure the attacker toward honeypots., Fake configuration, backup, and connection files such as RDP, VPN, and AWS credentials."
+T1005,Data from Local System,collection,DecoyFile
+T1014,Rootkit,defense-evasion,DecoyFile
+T1016,System Network Configuration Discovery,discovery,DecoyFile
+T1018,Remote System Discovery,discovery,DecoyFile
+T1021,Remote Services,Lateral Movement,"Set up fake network services or protocols such as Telnet, SSH, and VNC., Create breadcrumbs or honeytokens to lure attackers toward fake network services."
+T1025,Data from Removable Media,Collection,"Create decoy files or documents (beacons) that phone home when opened., Create emulated or virtual USB devices and monitor access (e.g. using Windows Removable Storage Auditing)., Create files containing deceptive content and breadcrumbs to lure the attacker toward honeypots."
+T1027.001,Obfuscated Files or Information: Binary Padding,defense-evasion,DecoyFile
+T1027.002,Obfuscated Files or Information: Software Packing,defense-evasion,DecoyFile
+T1027.004,Obfuscated Files or Information: Compile After Delivery,defense-evasion,DecoyFile
+T1033,System Owner/User Discovery,discovery,DecoyFile
+T1036.001,Masquerading: Invalid Code Signature,defense-evasion,DecoyFile
+T1036.003,Masquerading: Rename System Utilities,defense-evasion,DecoyFile
+T1036.005,Masquerading: Match Legitimate Name or Location,defense-evasion,DecoyFile
+T1036.006,Masquerading: Space after Filename,defense-evasion,DecoyFile
+T1037.001,Boot or Logon Initialization Scripts: Logon Script (Windows),persistence,DecoyFile
+T1037.001,Boot or Logon Initialization Scripts: Logon Script (Windows),privilege-escalation,DecoyFile
+T1037.002,Boot or Logon Initialization Scripts: Login Hook,persistence,DecoyFile
+T1037.002,Boot or Logon Initialization Scripts: Login Hook,privilege-escalation,DecoyFile
+T1037.003,Boot or Logon Initialization Scripts: Network Logon Script,persistence,DecoyFile
+T1037.003,Boot or Logon Initialization Scripts: Network Logon Script,persistence,DecoyNetworkResource
+T1037.003,Boot or Logon Initialization Scripts: Network Logon Script,privilege-escalation,DecoyFile
+T1037.003,Boot or Logon Initialization Scripts: Network Logon Script,privilege-escalation,DecoyNetworkResource
+T1037.004,Boot or Logon Initialization Scripts: RC Scripts,persistence,DecoyFile
+T1037.004,Boot or Logon Initialization Scripts: RC Scripts,privilege-escalation,DecoyFile
+T1039,Data from Network Shared Drive,Collection,"Create fake network shares, or create fake directories/files (honeyfiles) in real network shares and monitor access., Create decoy files or documents (beacons) that phone home when opened."
+T1039,Data from Network Shared Drive,collection,DecoyNetworkResource
+T1041,Exfiltration Over C2 Channel,exfiltration,DecoyFile
+T1043,Commonly Used Port,Command and Control,"Set up network sinkholes (fake network services or protocols such as HTTP, HTTPS, FTP, SMTP, and DNS)., Redirect all known malicious domains to an internal network sinkhole using internal DNS servers."
+T1046,Network Service Scanning,Discovery,"Set up fake network services., Create breadcrumbs or honeytokens to lure attackers toward the fake network services., Fake entries in ARP cache, hosts file, etc."
+T1048.002,Exfiltration Over Alternative Protocol: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,exfiltration,DecoyFile
+T1053.004,Scheduled Task/Job: Launchd,execution,DecoyFile
+T1053.004,Scheduled Task/Job: Launchd,persistence,DecoyFile
+T1053.004,Scheduled Task/Job: Launchd,privilege-escalation,DecoyFile
+T1055.001,Process Injection: Dynamic-link Library Injection,defense-evasion,DecoyFile
+T1055.001,Process Injection: Dynamic-link Library Injection,privilege-escalation,DecoyFile
+T1055.002,Process Injection: Portable Executable Injection,defense-evasion,DecoyFile
+T1055.002,Process Injection: Portable Executable Injection,privilege-escalation,DecoyFile
+T1055.003,Process Injection: Thread Execution Hijacking,defense-evasion,DecoyFile
+T1055.003,Process Injection: Thread Execution Hijacking,privilege-escalation,DecoyFile
+T1055.009,Process Injection: Proc Memory,defense-evasion,DecoyFile
+T1055.009,Process Injection: Proc Memory,privilege-escalation,DecoyFile
+T1055.014,Process Injection: VDSO Hijacking,defense-evasion,DecoyFile
+T1055.014,Process Injection: VDSO Hijacking,privilege-escalation,DecoyFile
+T1056,Input Capture,"Collection, Credential Access","Inject fake keystrokes containing honey accounts or any other type of honeytokens, such as URL tokens."
+T1059,Command and Scripting Interpreter,execution,DecoyFile
+T1068,Exploitation of Vulnerability,"Credential Access, Defense Evasion, Lateral Movement, Privilege Escalation","Set up fake vulnerable resources using honeypots., Deploy emulated or real operating systems, network protocols, or vulnerabilities."
+T1070.002,Indicator Removal: Clear Linux or Mac System Logs,defense-evasion,DecoyFile
+T1070.004,Indicator Removal: File Deletion,defense-evasion,DecoyFile
+T1070.005,Indicator Removal: Network Share Connection Removal,defense-evasion,DecoyNetworkResource
+T1071,Application Layer Protocol,command-and-control,DecoyFile
+T1071.001,Application Layer Protocol: Web Protocols,command-and-control,DecoyFile
+T1072,Software Deployment Tools,execution,DecoyFile
+T1072,Software Deployment Tools,lateral-movement,DecoyFile
+T1074.001,Data Staged: Local Data Staging,collection,DecoyFile
+T1074.002,Data Staged: Remote Data Staging,collection,DecoyNetworkResource
+T1075,Pass the Hash,Lateral Movement,Inject fake credentials into LSASS (honey hashes).
+T1076,Remote Desktop Protocol,Lateral Movement,"Set up fake RDP services., Create fake RDP connection files., Deploy decoy documents containing deceptive contents and breadcrumbs."
+T1080,Taint Shared Content,lateral-movement,DecoyNetworkResource
+T1082,System Information Discovery,discovery,DecoyEnvironment
+T1082,System Information Discovery,discovery,IntegratedHoneynet
+T1082,System Information Discovery,discovery,StandaloneHoneynet
+T1083,File and Directory Discovery,discovery,DecoyFile
+T1087,Account Discovery,Discovery,"Create fake local or domain accounts., Create Kerberoast Service Account honeytokens."
+T1098.001,Account Manipulation: Additional Cloud Credentials,persistence,DecoyUserCredential
+T1105,Remote File Copy,"Lateral Movement, Command and Control","Set up fake network services or protocols such as FTP, SFTP, and SCP., Create breadcrumbs or honeytokens to lure attackers toward the fake network services (honeypots)., Deploy documents/files with deceptive contents and breadcrumbs., Manipulate bash_history with fake entries (e.g., fake FTP, SCP commands)."
+T1110,Brute Force,Credential Access,Set up fake network services and accounts.
+T1110.001,Brute Force: Password Guessing,credential-access,DecoyUserCredential
+T1110.002,Brute Force: Password Cracking,credential-access,DecoyUserCredential
+T1110.003,Brute Force: Password Spraying,credential-access,DecoyUserCredential
+T1114,Email Collection,Collection,"Create fake Outlook storage or cache files (.pst, .ost)., Fake emails containing deceptive content and breadcrumbs to lure the attacker toward honeypots., Fake emails containing decoy documents or URL honeytokens (beacons) that phone home when opened/clicked."
+T1114.001,Email Collection: Local Email Collection,collection,DecoyFile
+T1119,Automated Collection,Collection,"Create fake directories and files (i.e. honeyfiles) and monitor access using go-audit, auditd, or FIM tools., Create decoy files or documents (beacons) that phone home when opened., Create files containing deceptive content and breadcrumbs to lure the attacker toward honeypots."
+T1119,Automated Collection,collection,DecoyFile
+T1127.001,Trusted Developer Utilities Proxy Execution: MSBuild,defense-evasion,DecoyFile
+T1134.001,Access Token Manipulation: Token Impersonation/Theft,defense-evasion,DecoyUserCredential
+T1134.001,Access Token Manipulation: Token Impersonation/Theft,privilege-escalation,DecoyUserCredential
+T1134.002,Access Token Manipulation: Create Process with Token,defense-evasion,DecoyUserCredential
+T1134.002,Access Token Manipulation: Create Process with Token,privilege-escalation,DecoyUserCredential
+T1134.003,Access Token Manipulation: Make and Impersonate Token,defense-evasion,DecoyUserCredential
+T1134.003,Access Token Manipulation: Make and Impersonate Token,privilege-escalation,DecoyUserCredential
+T1137.001,Office Application Startup: Office Template Macros,persistence,DecoyFile
+T1137.003,Office Application Startup: Outlook Forms,persistence,DecoyFile
+T1139,Bash History,Credential Access,"Manipulate bash_history with fake credentials and honeytokens., Fake SSH, FTP, and database login entries."
+T1140,Deobfuscate/Decode Files or Information,defense-evasion,DecoyFile
+T1187,Forced Authentication,credential-access,DecoyFile
+T1204.002,User Execution: Malicious File,execution,DecoyFile
+T1213.001,Data from Information Repositories: Confluence,collection,DecoyNetworkResource
+T1213.002,Data from Information Repositories: Sharepoint,collection,DecoyNetworkResource
+T1218.005,System Binary Proxy Execution: Mshta,defense-evasion,DecoyFile
+T1218.011,System Binary Proxy Execution: Rundll32,defense-evasion,DecoyFile
+T1220,XSL Script Processing,defense-evasion,DecoyFile
+T1491.002,Defacement: External Defacement,impact,DecoyNetworkResource
+T1505.003,Server Software Component: Web Shell,persistence,DecoyFile
+T1528,Steal Application Access Token,credential-access,DecoyUserCredential
+T1534,Internal Spearphishing,lateral-movement,DecoyFile
+T1539,Steal Web Session Cookie,credential-access,DecoyUserCredential
+T1543.001,Create or Modify System Process: Launch Agent,persistence,DecoyFile
+T1543.001,Create or Modify System Process: Launch Agent,privilege-escalation,DecoyFile
+T1543.002,Create or Modify System Process: Systemd Service,persistence,DecoyFile
+T1543.002,Create or Modify System Process: Systemd Service,privilege-escalation,DecoyFile
+T1543.004,Create or Modify System Process: Launch Daemon,persistence,DecoyFile
+T1543.004,Create or Modify System Process: Launch Daemon,privilege-escalation,DecoyFile
+T1546.002,Event Triggered Execution: Screensaver,persistence,DecoyFile
+T1546.002,Event Triggered Execution: Screensaver,privilege-escalation,DecoyFile
+T1546.004,Event Triggered Execution: Unix Shell Configuration Modification,persistence,DecoyFile
+T1546.004,Event Triggered Execution: Unix Shell Configuration Modification,privilege-escalation,DecoyFile
+T1546.005,Event Triggered Execution: Trap,persistence,DecoyFile
+T1546.005,Event Triggered Execution: Trap,privilege-escalation,DecoyFile
+T1546.006,Event Triggered Execution: LC_LOAD_DYLIB Addition,persistence,DecoyFile
+T1546.006,Event Triggered Execution: LC_LOAD_DYLIB Addition,privilege-escalation,DecoyFile
+T1546.008,Event Triggered Execution: Accessibility Features,persistence,DecoyFile
+T1546.008,Event Triggered Execution: Accessibility Features,privilege-escalation,DecoyFile
+T1546.009,Event Triggered Execution: AppCert DLLs,persistence,DecoyFile
+T1546.009,Event Triggered Execution: AppCert DLLs,privilege-escalation,DecoyFile
+T1546.010,Event Triggered Execution: AppInit DLLs,persistence,DecoyFile
+T1546.010,Event Triggered Execution: AppInit DLLs,privilege-escalation,DecoyFile
+T1546.013,Event Triggered Execution: PowerShell Profile,persistence,DecoyFile
+T1546.013,Event Triggered Execution: PowerShell Profile,privilege-escalation,DecoyFile
+T1546.014,Event Triggered Execution: Emond,persistence,DecoyFile
+T1546.014,Event Triggered Execution: Emond,privilege-escalation,DecoyFile
+T1546.015,Event Triggered Execution: Component Object Model Hijacking,persistence,DecoyFile
+T1546.015,Event Triggered Execution: Component Object Model Hijacking,privilege-escalation,DecoyFile
+T1547.001,Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder,persistence,DecoyFile
+T1547.001,Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder,privilege-escalation,DecoyFile
+T1547.006,Boot or Logon Autostart Execution: Kernel Modules and Extensions,persistence,DecoyFile
+T1547.006,Boot or Logon Autostart Execution: Kernel Modules and Extensions,privilege-escalation,DecoyFile
+T1547.007,Boot or Logon Autostart Execution: Re-opened Applications,persistence,DecoyFile
+T1547.007,Boot or Logon Autostart Execution: Re-opened Applications,privilege-escalation,DecoyFile
+T1547.008,Boot or Logon Autostart Execution: LSASS Driver,persistence,DecoyFile
+T1547.008,Boot or Logon Autostart Execution: LSASS Driver,privilege-escalation,DecoyFile
+T1547.009,Boot or Logon Autostart Execution: Shortcut Modification,persistence,DecoyFile
+T1547.009,Boot or Logon Autostart Execution: Shortcut Modification,privilege-escalation,DecoyFile
+T1547.011,Boot or Logon Autostart Execution: Unknown Sub-technique,persistence,DecoyFile
+T1547.011,Boot or Logon Autostart Execution: Unknown Sub-technique,privilege-escalation,DecoyFile
+T1548.002,Abuse Elevation Control Mechanism: Bypass User Account Control,defense-evasion,DecoyFile
+T1548.002,Abuse Elevation Control Mechanism: Bypass User Account Control,privilege-escalation,DecoyFile
+T1548.003,Abuse Elevation Control Mechanism: Sudo and Sudo Caching,defense-evasion,DecoyFile
+T1548.003,Abuse Elevation Control Mechanism: Sudo and Sudo Caching,privilege-escalation,DecoyFile
+T1550.001,Use Alternate Authentication Material: Application Access Token,defense-evasion,DecoyUserCredential
+T1550.001,Use Alternate Authentication Material: Application Access Token,lateral-movement,DecoyUserCredential
+T1552,Unsecured Credentials,credential-access,DecoyUserCredential
+T1552.001,Unsecured Credentials: Credentials In Files,credential-access,DecoyFile
+T1552.003,Unsecured Credentials: Bash History,credential-access,DecoyFile
+T1555,Credentials from Password Stores,credential-access,DecoyFile
+T1555.003,Credentials from Password Stores: Credentials from Web Browsers,credential-access,DecoyFile
+T1556.002,Modify Authentication Process: Password Filter DLL,credential-access,DecoyFile
+T1556.002,Modify Authentication Process: Password Filter DLL,defense-evasion,DecoyFile
+T1556.002,Modify Authentication Process: Password Filter DLL,persistence,DecoyFile
+T1556.003,Modify Authentication Process: Pluggable Authentication Modules,credential-access,DecoyFile
+T1556.003,Modify Authentication Process: Pluggable Authentication Modules,defense-evasion,DecoyFile
+T1556.003,Modify Authentication Process: Pluggable Authentication Modules,persistence,DecoyFile
+T1558,Steal or Forge Kerberos Tickets,credential-access,DecoyUserCredential
+T1558.001,Steal or Forge Kerberos Tickets: Golden Ticket,credential-access,DecoyUserCredential
+T1560,Archive Collected Data,collection,DecoyFile
+T1560.001,Archive Collected Data: Archive via Utility,collection,DecoyFile
+T1560.002,Archive Collected Data: Archive via Library,collection,DecoyFile
+T1560.003,Archive Collected Data: Archive via Custom Method,collection,DecoyFile
+T1562.003,Impair Defenses: Impair Command History Logging,defense-evasion,DecoyFile
+T1564.002,Hide Artifacts: Hidden Users,defense-evasion,DecoyFile
+T1564.003,Hide Artifacts: Hidden Window,defense-evasion,DecoyFile
+T1564.006,Hide Artifacts: Run Virtual Instance,defense-evasion,DecoyFile
+T1564.007,Hide Artifacts: VBA Stomping,defense-evasion,DecoyFile
+T1565.001,Data Manipulation: Stored Data Manipulation,impact,DecoyFile
+T1565.003,Data Manipulation: Runtime Data Manipulation,impact,DecoyFile
+T1566.001,Phishing: Spearphishing Attachment,initial-access,DecoyFile
+T1566.002,Phishing: Spearphishing Link,initial-access,DecoyFile
+T1566.003,Phishing: Spearphishing via Service,initial-access,DecoyFile
+T1573.002,Encrypted Channel: Asymmetric Cryptography,command-and-control,DecoyFile
+T1574.001,Hijack Execution Flow: DLL Search Order Hijacking,defense-evasion,DecoyFile
+T1574.001,Hijack Execution Flow: DLL Search Order Hijacking,persistence,DecoyFile
+T1574.001,Hijack Execution Flow: DLL Search Order Hijacking,privilege-escalation,DecoyFile
+T1574.002,Hijack Execution Flow: DLL Side-Loading,defense-evasion,DecoyFile
+T1574.002,Hijack Execution Flow: DLL Side-Loading,persistence,DecoyFile
+T1574.002,Hijack Execution Flow: DLL Side-Loading,privilege-escalation,DecoyFile
+T1574.004,Hijack Execution Flow: Dylib Hijacking,defense-evasion,DecoyFile
+T1574.004,Hijack Execution Flow: Dylib Hijacking,persistence,DecoyFile
+T1574.004,Hijack Execution Flow: Dylib Hijacking,privilege-escalation,DecoyFile
+T1574.006,Hijack Execution Flow: Dynamic Linker Hijacking,defense-evasion,DecoyFile
+T1574.006,Hijack Execution Flow: Dynamic Linker Hijacking,persistence,DecoyFile
+T1574.006,Hijack Execution Flow: Dynamic Linker Hijacking,privilege-escalation,DecoyFile
+T1574.007,Hijack Execution Flow: Path Interception by PATH Environment Variable,defense-evasion,DecoyFile
+T1574.007,Hijack Execution Flow: Path Interception by PATH Environment Variable,persistence,DecoyFile
+T1574.007,Hijack Execution Flow: Path Interception by PATH Environment Variable,privilege-escalation,DecoyFile
+T1574.008,Hijack Execution Flow: Path Interception by Search Order Hijacking,defense-evasion,DecoyFile
+T1574.008,Hijack Execution Flow: Path Interception by Search Order Hijacking,persistence,DecoyFile
+T1574.008,Hijack Execution Flow: Path Interception by Search Order Hijacking,privilege-escalation,DecoyFile
+T1574.009,Hijack Execution Flow: Path Interception by Unquoted Path,defense-evasion,DecoyFile
+T1574.009,Hijack Execution Flow: Path Interception by Unquoted Path,persistence,DecoyFile
+T1574.009,Hijack Execution Flow: Path Interception by Unquoted Path,privilege-escalation,DecoyFile
+T1574.012,Hijack Execution Flow: COR_PROFILER,defense-evasion,DecoyFile
+T1574.012,Hijack Execution Flow: COR_PROFILER,persistence,DecoyFile
+T1574.012,Hijack Execution Flow: COR_PROFILER,privilege-escalation,DecoyFile

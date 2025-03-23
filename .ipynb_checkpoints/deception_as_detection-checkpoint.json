@@ -1,0 +1,162 @@
+{
+    "T1119": {
+        "name": "Automated Collection",
+        "tactic": "Collection",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Create fake directories and files (i.e. honeyfiles) and monitor access using go-audit, auditd, or FIM tools.",
+            "Create decoy files or documents (beacons) that phone home when opened.",
+            "Create files containing deceptive content and breadcrumbs to lure the attacker toward honeypots."
+        ]
+    },
+    "T1005": {
+        "name": "Data from Local System",
+        "tactic": "Collection",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Create fake directories and files (i.e. honeyfiles) and monitor access using go-audit, auditd, or FIM tools.",
+            "Create decoy files or documents (beacons) that phone home when opened.",
+            "Create files containing deceptive content and breadcrumbs to lure the attacker toward honeypots.",
+            "Fake configuration, backup, and connection files such as RDP, VPN, and AWS credentials."
+        ]
+    },
+    "T1039": {
+        "name": "Data from Network Shared Drive",
+        "tactic": "Collection",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Create fake network shares, or create fake directories/files (honeyfiles) in real network shares and monitor access.",
+            "Create decoy files or documents (beacons) that phone home when opened."
+        ]
+    },
+    "T1025": {
+        "name": "Data from Removable Media",
+        "tactic": "Collection",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Create decoy files or documents (beacons) that phone home when opened.",
+            "Create emulated or virtual USB devices and monitor access (e.g. using Windows Removable Storage Auditing).",
+            "Create files containing deceptive content and breadcrumbs to lure the attacker toward honeypots."
+        ]
+    },
+    "T1114": {
+        "name": "Email Collection",
+        "tactic": "Collection",
+        "platforms": ["Windows"],
+        "deception_techniques": [
+            "Create fake Outlook storage or cache files (.pst, .ost).",
+            "Fake emails containing deceptive content and breadcrumbs to lure the attacker toward honeypots.",
+            "Fake emails containing decoy documents or URL honeytokens (beacons) that phone home when opened/clicked."
+        ]
+    },
+    "T1056": {
+        "name": "Input Capture",
+        "tactic": ["Collection", "Credential Access"],
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Inject fake keystrokes containing honey accounts or any other type of honeytokens, such as URL tokens."
+        ]
+    },
+    "T1043": {
+        "name": "Commonly Used Port",
+        "tactic": "Command and Control",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Set up network sinkholes (fake network services or protocols such as HTTP, HTTPS, FTP, SMTP, and DNS).",
+            "Redirect all known malicious domains to an internal network sinkhole using internal DNS servers."
+        ]
+    },
+    "T1105": {
+        "name": "Remote File Copy",
+        "tactic": ["Lateral Movement", "Command and Control"],
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Set up fake network services or protocols such as FTP, SFTP, and SCP.",
+            "Create breadcrumbs or honeytokens to lure attackers toward the fake network services (honeypots).",
+            "Deploy documents/files with deceptive contents and breadcrumbs.",
+            "Manipulate bash_history with fake entries (e.g., fake FTP, SCP commands)."
+        ]
+    },
+    "T1139": {
+        "name": "Bash History",
+        "tactic": "Credential Access",
+        "platforms": ["Linux", "Mac"],
+        "deception_techniques": [
+            "Manipulate bash_history with fake credentials and honeytokens.",
+            "Fake SSH, FTP, and database login entries."
+        ]
+    },
+    "T1110": {
+        "name": "Brute Force",
+        "tactic": "Credential Access",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Set up fake network services and accounts."
+        ]
+    },
+    "T1003": {
+        "name": "Credential Dumping",
+        "tactic": "Credential Access",
+        "platforms": ["Windows"],
+        "deception_techniques": [
+            "Inject fake credentials into LSASS (honey hashes).",
+            "Create Kerberoast Service Account honeytokens.",
+            "Fake credentials in browser password managers."
+        ]
+    },
+    "T1068": {
+        "name": "Exploitation of Vulnerability",
+        "tactic": ["Credential Access", "Defense Evasion", "Lateral Movement", "Privilege Escalation"],
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Set up fake vulnerable resources using honeypots.",
+            "Deploy emulated or real operating systems, network protocols, or vulnerabilities."
+        ]
+    },
+    "T1087": {
+        "name": "Account Discovery",
+        "tactic": "Discovery",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Create fake local or domain accounts.",
+            "Create Kerberoast Service Account honeytokens."
+        ]
+    },
+    "T1046": {
+        "name": "Network Service Scanning",
+        "tactic": "Discovery",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Set up fake network services.",
+            "Create breadcrumbs or honeytokens to lure attackers toward the fake network services.",
+            "Fake entries in ARP cache, hosts file, etc."
+        ]
+    },
+    "T1075": {
+        "name": "Pass the Hash",
+        "tactic": "Lateral Movement",
+        "platforms": ["Windows"],
+        "deception_techniques": [
+            "Inject fake credentials into LSASS (honey hashes)."
+        ]
+    },
+    "T1076": {
+        "name": "Remote Desktop Protocol",
+        "tactic": "Lateral Movement",
+        "platforms": ["Windows"],
+        "deception_techniques": [
+            "Set up fake RDP services.",
+            "Create fake RDP connection files.",
+            "Deploy decoy documents containing deceptive contents and breadcrumbs."
+        ]
+    },
+    "T1021": {
+        "name": "Remote Services",
+        "tactic": "Lateral Movement",
+        "platforms": ["Windows", "Linux", "Mac"],
+        "deception_techniques": [
+            "Set up fake network services or protocols such as Telnet, SSH, and VNC.",
+            "Create breadcrumbs or honeytokens to lure attackers toward fake network services."
+        ]
+    }
+}
